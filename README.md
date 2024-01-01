@@ -2,7 +2,7 @@
 
 ## Description
 
-This project, a challenge from Frontend Mentor named "Three Column Card", serves as an ideal project for beginners learning HTML and CSS fundamentals, specifically flex layout and media queries. It also provides an opportunity to practice writing HTML and CSS using best practices and standards.
+This project, a challenge from Frontend Mentor named "FAQ Accordion Card", serves as an ideal project for beginners learning HTML and CSS fundamentals, specifically flex layout and media queries. It also provides an opportunity to practice writing HTML and CSS using best practices and standards.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ This is a simple project that doesn't require any special tools for installation
 
 ## Usage
 
-This project doesn't have any interactive features as it's a static HTML and CSS project. To view the project, simply open the `index.html` file in your web browser.
+This project does have interactive features but it is mainly viewed as a static HTML and CSS project. To view the project, simply open the `index.html` file in your web browser.
 
 ## Contributing
 
