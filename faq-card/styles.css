@@ -23,18 +23,235 @@
   --very-dark-grayish-blue: hsl(237, 12%, 33%);
   --dark-grayish-blue: hsl(240, 6%, 50%);
   --light-grayish-blue: hsl(240, 5%, 91%);
+  --light-white: hsl(0, 0%, 100%);
 
+  /* Fonts */
   --primary-font: "Kumbh Sans", sans-serif;
+
+  /* Font sizes */
+  --font-size-small: 0.8rem;
+  --font-size-large: 2rem;
+
+  /* Padding */
+  --padding: 3rem;
 }
 
 /**************************
     Global Styles
 ***************************/
+
 body {
   font-family: var(--primary-font);
+  background-color: var(--soft-violet);
 }
 
 /**************************
     FAQ Card Styles
     Mobile First
 ***************************/
+
+/* Containers/Wrappers */
+
+.card-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.main-wrapper {
+  width: 90%;
+  height: max-content;
+  background-color: var(--light-white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  margin-block-end: 3rem;
+  padding-block-start: var(--padding);
+  padding-block-end: var(--padding);
+}
+
+.box-icon {
+  display: none;
+}
+
+.img-wrapper {
+  position: absolute;
+  top: -6.5rem;
+}
+
+.faq-accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: var(--padding);
+}
+
+/* Images */
+
+.img {
+  height: 180px;
+}
+
+.img-shadow {
+  height: 115px;
+  position: absolute;
+  top: -0.5rem;
+}
+
+/* Typography layout/styles */
+
+.main-title {
+  text-align: center;
+  margin-block: 1.5rem;
+  font-size: var(--font-size-large);
+  padding-block-start: var(--padding);
+}
+
+.question {
+  list-style: none;
+}
+
+.question:hover {
+  cursor: pointer;
+  color: var(--soft-red);
+}
+
+.answer {
+  padding-block-start: 1rem;
+}
+
+.question,
+.answer {
+  color: var(--very-dark-grayish-blue);
+  font-size: var(--font-size-small);
+}
+
+/* Arrow icon styles */
+
+.question::after {
+  content: url("images/icon-arrow-down.svg");
+  position: absolute;
+  right: 1rem;
+  margin-right: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Summary/Details Elements Open/Closed Styles */
+
+.question-wrapper[open] > .question {
+  font-weight: 700;
+}
+
+.question-wrapper[open] > .question::after {
+  transform: rotate(180deg);
+}
+
+/************************************
+    FAQ Card Styles
+    Media Queries for bigger screens
+*************************************/
+
+@media (min-width: 768px) {
+  /* 768px containers/wrappers */
+
+  .card-container {
+    align-items: center;
+  }
+
+  .main-wrapper {
+    align-items: start;
+    overflow: hidden;
+    width: 70%;
+    height: max-content;
+    padding-block-start: 0;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: -4rem 5rem;
+    background-size: 370px;
+    background-attachment: fixed;
+  }
+
+  .img-wrapper {
+    position: relative;
+    top: 7rem;
+    left: -2rem;
+    height: 200px;
+  }
+
+  .faq-accordion-wrapper {
+    width: 21rem;
+    padding-inline: 0;
+    margin-right: 4rem;
+  }
+
+  /* Icons/Images Styles */
+
+  .box-icon {
+    position: absolute;
+    height: 110px;
+    left: 3rem;
+    top: 38%;
+    z-index: 1;
+    display: block;
+  }
+
+  .img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .img-shadow {
+    display: none;
+  }
+
+  /* Typography layout/styles */
+
+  .main-title {
+    text-align: start;
+  }
+
+  .question::after {
+    margin-right: 3rem;
+  }
+
+  .question-wrapper[open] > .question {
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .box-icon {
+    left: 5rem;
+  }
+}
+
+/* Min-width: 1004px */
+
+@media screen and (min-width: 1004px) {
+  .main-wrapper {
+    width: 60%;
+    background-position: -13rem -8rem;
+    background-size: 710px;
+  }
+
+  .img-wrapper {
+    left: -5rem;
+  }
+
+  .box-icon {
+    left: 9rem;
+    top: 40%;
+  }
+}
+
+/* Min-width: 1100px */
+
+@media screen and (min-width: 1100px) {
+  .box-icon {
+    left: 11rem;
+  }
+}
