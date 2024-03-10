@@ -1,4 +1,4 @@
-# Three Column Responsive Card Layout Project
+# FAQ Accordion Card - Frontend Mentor Project
 
 ## Description
 
